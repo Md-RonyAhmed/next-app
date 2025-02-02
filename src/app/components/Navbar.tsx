@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
-  if (pathname.includes("dashboard") || pathname.includes("profile")) {
+  if (pathname.includes("dashboard")) {
     return null;
   }
 
@@ -18,47 +18,61 @@ const Navbar = () => {
                 Logo
               </Link>
             </div>
-            
+
             <div className="hidden md:block">
               <div className="ml-10 flex items-center space-x-8">
-                <Link 
+                <Link
                   href="/"
-                  className={`${pathname === '/' ? 'text-blue-600' : 'text-gray-600'} 
+                  className={`${
+                    pathname === "/" ? "text-blue-600" : "text-gray-600"
+                  } 
                     hover:text-blue-600 transition-colors duration-200 font-medium`}
                 >
                   Home
                 </Link>
-                <Link 
+                <Link
                   href="/dashboard"
-                  className={`${pathname === '/dashboard' ? 'text-blue-600' : 'text-gray-600'} 
+                  className={`${
+                    pathname === "/dashboard"
+                      ? "text-blue-600"
+                      : "text-gray-600"
+                  } 
                     hover:text-blue-600 transition-colors duration-200 font-medium`}
                 >
                   Dashboard
                 </Link>
-                <Link 
+                <Link
                   href="/about"
-                  className={`${pathname === '/about' ? 'text-blue-600' : 'text-gray-600'} 
+                  className={`${
+                    pathname === "/about" ? "text-blue-600" : "text-gray-600"
+                  } 
                     hover:text-blue-600 transition-colors duration-200 font-medium`}
                 >
                   About
                 </Link>
-                <Link 
+                <Link
                   href="/contact"
-                  className={`${pathname === '/contact' ? 'text-blue-600' : 'text-gray-600'} 
+                  className={`${
+                    pathname === "/contact" ? "text-blue-600" : "text-gray-600"
+                  } 
                     hover:text-blue-600 transition-colors duration-200 font-medium`}
                 >
                   Contact
                 </Link>
-                <Link 
+                <Link
                   href="/products"
-                  className={`${pathname === '/products' ? 'text-blue-600' : 'text-gray-600'} 
+                  className={`${
+                    pathname === "/products" ? "text-blue-600" : "text-gray-600"
+                  } 
                     hover:text-blue-600 transition-colors duration-200 font-medium`}
                 >
                   Products
                 </Link>
-                <Link 
+                <Link
                   href="/docs"
-                  className={`${pathname === '/docs' ? 'text-blue-600' : 'text-gray-600'} 
+                  className={`${
+                    pathname === "/docs" ? "text-blue-600" : "text-gray-600"
+                  } 
                     hover:text-blue-600 transition-colors duration-200 font-medium`}
                 >
                   Docs
