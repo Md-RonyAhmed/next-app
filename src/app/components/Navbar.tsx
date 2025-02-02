@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <div className="fixed w-full top-0 z-50">
-      <nav className="backdrop-blur-sm bg-white/75 shadow-md">
+      <nav className="backdrop-blur-sm bg-white/75 shadow py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
