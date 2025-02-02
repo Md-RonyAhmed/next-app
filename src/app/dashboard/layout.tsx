@@ -6,15 +6,30 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen">
-      <aside className="w-60 bg-gray-300 p-4">
-        <nav className="flex flex-col gap-4">
-          <Link href="/dashboard/settings">Settings</Link>
-          <Link href="/dashboard/profile">Profile</Link>
+    <div className="flex h-screen bg-gray-100">
+      <aside className="w-64 bg-white shadow-md">
+        <div className="p-5">
+          <h2 className="text-2xl font-semibold text-gray-800">Dashboard</h2>
+        </div>
+        <nav className="mt-5">
+          <Link
+            href="/dashboard/settings"
+            className="block py-3 px-5 text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-200"
+          >
+            <i className="fas fa-cog mr-2"></i> Settings
+          </Link>
+          <Link
+            href="/dashboard/profile"
+            className="block py-3 px-5 text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-200"
+          >
+            <i className="fas fa-user mr-2"></i> Profile
+          </Link>
         </nav>
       </aside>
-      <main style={{ flex: 1, padding: "20px" }}>
-        <div>{children}</div>
+      <main className="flex-1 p-8 overflow-y-auto">
+        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
+          {children}
+        </div>
       </main>
     </div>
   );
