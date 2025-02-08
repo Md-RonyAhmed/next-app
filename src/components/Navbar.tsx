@@ -15,6 +15,7 @@ const Navbar = () => {
     { name: "Products", href: "/products" },
     { name: "Dashboard", href: "/dashboard" },
     { name: "Docs", href: "/docs" },
+    { name: "Blog", href: "/blog" },
 
     // Add more routes as needed
   ];

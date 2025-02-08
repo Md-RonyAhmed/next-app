@@ -9,6 +9,7 @@ const ReviewDetailPage = async ({
   if (parseInt(productId) > 100) {
     redirect("/products");
   } else if (parseInt(reviewId) > 100) {
+    throw new Error(`Invalid review ID: ${reviewId}`);
     notFound();
   }
   return (
