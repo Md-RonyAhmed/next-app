@@ -10,17 +10,29 @@ const poppins = Poppins({
   weight: "400",
   style: "normal",
 });
-export default function DashboardLayout({
-  children,
-}: {
+
+type Props = {
   children: React.ReactNode;
-}) {
+  assignments: React.ReactNode;
+  notifications: React.ReactNode;
+  quiz: React.ReactNode;
+};
+
+export default function ParallelDashboardLayout({
+  children,
+  assignments,
+  notifications,
+  quiz,
+}: Props) {
+  const isLoggedIn: boolean = true;
   return (
     <div className={`flex h-screen bg-gray-100 ${poppins.className}`}>
       <aside className="w-64 bg-white shadow-md">
         <div className="p-5">
-          <Link href="/dashboard">
-            <h2 className="text-2xl font-semibold text-gray-800">Dashboard</h2>
+          <Link href="/parallel-dashboard">
+            <h2 className="text-2xl font-semibold text-gray-800">
+              Parallel Dashboard
+            </h2>
           </Link>
         </div>
         <nav className="mt-5">
@@ -58,7 +70,17 @@ export default function DashboardLayout({
         </nav>
       </aside>
       <main className="flex-1 overflow-y-auto">
-        <div className="p-6 h-screen">{children}</div>
+        <>
+          <h1 className="text-3xl font-bold text-center pt-6">
+            Welcome to the Parallel Dashboard
+          </h1>
+          {children}
+          <div className="grid gap-6 grid-cols-2 grid-rows-2 p-8">
+            {isLoggedIn && assignments}
+            {notifications}
+            {quiz}
+          </div>
+        </>
       </main>
     </div>
   );
