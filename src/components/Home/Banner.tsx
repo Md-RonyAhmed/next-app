@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <div className="flex">
+    <div className="flex gap-9">
       <div className="relative w-1/2 h-96 border-2 border-green-400 rounded-lg">
         <Image className="rounded-lg" src="https://images.unsplash.com/photo-1737403428945-c584529b7b17" alt="nature" fill objectFit="cover" />
       </div>
-      <div className="w-1/2">
+      <div className="w-1/2 space-y-5">
         <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
           Welcome to Our Platform
         </h1>
