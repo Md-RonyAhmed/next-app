@@ -1,6 +1,7 @@
 import "@/app/globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import { Roboto } from "next/font/google";
 export const metadata = {
   title: "Home",
@@ -25,11 +26,13 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         />
       </head>
-      <body>
-        <Navbar />
-        <main className="h-screen py-20">{children}</main>
-        <Footer />
-      </body>
+      <ThemeProvider>
+        <body>
+          <Navbar />
+          <main className="h-screen py-20">{children}</main>
+          <Footer />
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
